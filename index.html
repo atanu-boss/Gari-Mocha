@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pureshine - Professional Car Washing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+
+        .cta-btn {
+            background: #0066cc;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #0052a3;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #0066cc;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #0052a3;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0066cc;
+            padding: 0.8rem 2rem;
+            border: 2px solid #0066cc;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #0066cc;
+            color: white;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: #f9fafb;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .price-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .price-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+        }
+
+        .price-card h3 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: #0066cc;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .price-card li {
+            padding: 0.6rem 0;
+            color: #666;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .price-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .info-item strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: #666;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            color: #aaa;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">🚗 PureShine</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="cta-btn">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Car Deserves to Shine</h1>
+            <p>Professional car washing and detailing services that bring out the best in your vehicle</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Book Appointment</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💧</div>
+                <h3>Basic Wash</h3>
+                <p>Complete exterior wash with eco-friendly soap and spot-free rinse for a pristine finish.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Premium Detailing</h3>
+                <p>Deep cleaning and protection with wax coating to keep your car looking showroom-ready.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Ceramic Coating</h3>
+                <p>Advanced protective coating that lasts months and shields against contaminants.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧹</div>
+                <h3>Interior Cleaning</h3>
+                <p>Vacuum, sanitize, and refresh your car's interior for a clean, fresh driving experience.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚙</div>
+                <h3>Fleet Services</h3>
+                <p>Specialized solutions for businesses managing multiple vehicles with dedicated support.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌍</div>
+                <h3>Eco-Friendly</h3>
+                <p>Sustainable practices using biodegradable products that are safe for the environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-container">
+            <h2 class="section-title">Pricing Plans</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Basic Wash</h3>
+                    <div class="price">\$25</div>
+                    <ul>
+                        <li>✓ Exterior wash</li>
+                        <li>✓ Spot-free rinse</li>
+                        <li>✓ Tire cleaning</li>
+                        <li>✗ Wax coating</li>
+                        <li>✗ Interior cleaning</li>
+                    </ul>
+                    <button class="btn-primary">Select</button>
+                </div>
+                <div class="price-card">
+                    <h3>Premium Package</h3>
+                    <div class="price">\$55</div>
+                    <ul>
+                        <li>✓ Complete wash</li>
+                        <li>✓ Wax coating</li>
+                        <li>✓ Interior vacuum</li>
+                        <li>✓ Window treatment</li>
+                        <li>✗ Ceramic coating</li>
+                    </ul>
+                    <button class="btn-primary">Select</button>
+                </div>
+                <div class="price-card">
+                    <h3>Deluxe Package</h3>
+                    <div class="price">\$99</div>
+                    <ul>
+                        <li>✓ Everything above</li>
+                        <li>✓ Ceramic coating</li>
+                        <li>✓ Interior detailing</li>
+                        <li>✓ Dashboard shine</li>
+                        <li>✓ Priority booking</li>
+                    </ul>
+                    <button class="btn-primary">Select</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Get In Touch</h2>
+            <p>Questions? We're here to help and ready to book your next appointment.</p>
+            <div class="contact-info">
+                <div class="info-item">
+                    <strong>📞 Phone</strong>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="info-item">
+                    <strong>📧 Email</strong>
+                    <p>hello@pureshine.com</p>
+                </div>
+                <div class="info-item">
+                    <strong>📍 Location</strong>
+                    <p>123 Main Street, City</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 PureShine Car Washing. All rights reserved.</p>
+    </footer>
+</body>
+</html>
